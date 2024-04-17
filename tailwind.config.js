@@ -25,6 +25,7 @@ export default {
           secondary: "#9dda9d",
           accent: "#6cd66c",
           neutral: "#080b08",
+          error: "#ae5961",
           "base-100": "#f7f9f7",
           ".drop-shadow-primary": {
             filter: "drop-shadow(0 10px 8px #59ae59)",
@@ -37,6 +38,7 @@ export default {
           secondary: "#4b6566",
           accent: "#78919c",
           neutral: "#f3f6f3",
+          error: "#ccaab2",
           "base-100": "#070907",
           ".drop-shadow-primary": {
             filter: "drop-shadow(0 10px 8px #aacdaa)",
