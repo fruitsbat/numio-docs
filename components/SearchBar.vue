@@ -1,17 +1,17 @@
 <template>
   <div
-    class="bg-gradient-to-t to-base-300 from-transparent p-2 flex items-center justify-between"
+    class="bg-base-100 bg-opacity-40 p-2 flex items-center justify-between"
   >
     <NuxtLink class="font-black text-2xl text-center" to="/"
       >NumIO<br /><span class="text-sm">ensembles</span></NuxtLink
     >
     <button @click="openSearchModal" class="btn btn-ghost">search</button>
     <dialog
-      class="w-full bg-transparent h-full rounded-2xl join-vertical p-6"
+      class="w-full bg-transparent h-full rounded-2xl join-vertical p-2"
       ref="searchModal"
     >
       <div
-        class="join gap-6 p-6 join-vertical outline outline-1 outline-primary bg-base-100 bg-opacity-85 backdrop-blur-sm w-full h-full flex"
+        class="join gap-6 p-2 join-vertical outline outline-1 outline-primary bg-base-100 bg-opacity-85 backdrop-blur-sm w-full h-full flex"
       >
         <input
           class="input w-full flex-0 input-primary join-item h-16 text-neutral"

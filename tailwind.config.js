@@ -10,6 +10,10 @@ export default {
     "./error.vue",
   ],
   theme: {
+    fontFamily: {
+      // sans: ["Fira"]
+      sans: ["Fira Sans"]
+    },
     extend: {},
   },
   plugins: [

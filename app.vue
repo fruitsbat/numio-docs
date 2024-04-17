@@ -1,13 +1,15 @@
 <template>
   <div
-    class="p-0 h-svh bg-gradient-to-tr from-accent to-primary flex flex-col w-full items-stretch gap-6 overflow-y-scroll"
+    class="p-0 h-svh bg-gradient-to-tr from-base-100 to-primary flex flex-col w-full items-stretch gap-6 text-neutral"
   >
-    <div class="bg-base-100 bg-opacity-90 h-full w-full backdrop-blur-4xl overflow-scroll">
+    <div
+      class="bg-base-100 bg-opacity-90 h-full flex flex-col backdrop-blur-4xl overflow-y-scroll"
+    >
       <Suspense>
-        <SearchBar class="fixed w-full backdrop-blur-xl" />
+        <SearchBar class="w-full" />
       </Suspense>
       <div class="overflow-y-scroll w-full flex justify-center">
-        <div class="pt-24 prose">
+        <div class="max-w-xl p-6">
           <NuxtPage />
         </div>
       </div>

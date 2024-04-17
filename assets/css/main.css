@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("/FiraSans-Book.otf");
+}
+
+@font-face {
+    font-family: "Fira";
+    src: url("/FiraSans-Book.otf");
+  }
+
+@font-face {
+    font-family: "Fira Sans";
+    src: url("/FiraSans-ExtraBold.otf");
+    font-weight: 600;
+}
