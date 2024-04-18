@@ -1,5 +1,5 @@
 <template>
-    <h2 class="text-4xl link font-black pt-8 pb-4":id="id">
+    <h4 class="text-3xl link font-black pt-4 pb-0" :id="id">
       <a
         v-if="id && generate"
         :href="`#${id}`"
@@ -7,7 +7,7 @@
         <slot />
       </a>
       <slot v-else />
-    </h2>
+    </h4>
   </template>
   
   <script setup lang="ts">
@@ -16,5 +16,5 @@
   const props = defineProps<{ id?: string }>()
   
   const { headings } = useRuntimeConfig().public.mdc
-  const generate = computed(() => props.id && headings?.anchorLinks?.h2)
+  const generate = computed(() => props.id && headings?.anchorLinks?.h4)
   </script>

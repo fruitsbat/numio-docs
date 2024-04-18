@@ -5,3 +5,9 @@
     <NuxtLink to="/config">configuration</NuxtLink>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: "NumIO Ensembles",
+});
+</script>
