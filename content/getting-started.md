@@ -29,7 +29,7 @@ To follow this guide you will need a few things:
 NumIO ensembles is available on GitHub.
 After you have logged into your account on the cluster run:
 ```bash
-git clone https://github.com/fruitsbat/ensembles/
+git clone --filter=tree:0 https://github.com/fruitsbat/ensembles/
 ```
 
 This will create a folder called "`ensembles`".
