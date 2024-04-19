@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     highlight: {
       theme: {
         default: "catppuccin-mocha",
-        dark: "catppuccin-mocha",
       },
     },
   },

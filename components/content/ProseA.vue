@@ -1,3 +1,3 @@
 <template>
-  <NuxtLink class="link link-primary" :external="true"><slot></slot></NuxtLink>
+  <NuxtLink class="link link-primary text-neutral" :external="true"><slot></slot></NuxtLink>
 </template>
