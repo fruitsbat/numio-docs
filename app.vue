@@ -9,7 +9,7 @@
         <SearchBar class="w-full" />
       </Suspense>
       <div class="overflow-y-scroll w-full flex justify-center">
-        <div class="max-w-xl p-6">
+        <div class="max-w-7xl p-6">
           <NuxtPage />
         </div>
       </div>
