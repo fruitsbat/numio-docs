@@ -21,7 +21,7 @@ It will also assume basic knowledge of these things.
 ### Prerequisites
 NumIO Ensembles depends on a few things.
 To follow this guide you will need a few things:
-- [NumIO](https://git.wr.informatik.uni-hamburg.de/niclas.schroeter/IO-partdiff)
+- [NumIO](https://git.wr.informatik.uni-hamburg.de/anna.fuchs/Numio)
 - access to a cluster computing environment with Linux, MPI and Slurm
 - [the git CLI](https://git-scm.com/downloads)
 - [Conda](https://docs.anaconda.com/free/miniconda/)
