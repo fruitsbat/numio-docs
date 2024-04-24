@@ -99,6 +99,95 @@
         <input class="input" type="number" v-model="ensemblesRWFrequency" />
         iterations.
       </ProseP>
+      <div class="flex gap-2">
+        <label for="immediate-read">immediate read</label>
+        <input
+          id="immediate-read"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="rImmediate"
+        />
+      </div>
+      <div class="flex gap-2">
+        <label for="immediate-write"
+          >immediate write (nofilesync if disabled)</label
+        >
+        <input
+          id="immediate-write"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="numioWImmediate"
+        />
+      </div>
+      <hr />
+      <div class="flex gap-2">
+        <label for="collective-comms"
+          >immediate write (nofilesync if disabled)</label
+        >
+        <input
+          id="collective-comms"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="collectiveComms"
+        />
+      </div>
+      <ProseP
+        >Collective comm size will be
+        <input class="input" v-model="collectiveCommSize" type="number" /> with
+        a frequency of
+        <input class="input" type="number" v-model="collectiveCommFreq" />.
+      </ProseP>
+      <div class="flex gap-2">
+        <label for="fpisin">use fpisin</label>
+        <input
+          id="fpisin"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="numioFpisin"
+        />
+      </div>
+      <div class="flex gap-2">
+        <label for="file-per-process">file per process</label>
+        <input
+          id="file-per-process"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="numioFilePerProcess"
+        />
+      </div>
+      <div class="flex gap-2">
+        <label for="async-write">async write</label>
+        <input
+          id="async-write"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="asyncWrite"
+        />
+      </div>
+      <div class="flex gap-2">
+        <label for="fpisin">use gzip</label>
+        <input
+          id="gzip"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="gzip"
+        />
+      </div>
+      <div class="flex gap-2">
+        <label for="lz4">use lz4</label>
+        <input
+          id="lz4"
+          type="checkbox"
+          class="checkbox checkbox-primary"
+          v-model="lz4"
+        />
+      </div>
+      <ProseP
+        >Numio will use a chunk multiplier of
+        <input class="input" v-model="chunkMultiplier" type="number" /> with
+        and a compress level of
+        <input class="input" type="number" v-model="compressLevel" />.
+      </ProseP>
     </div>
     <ProseH3>Daemon Settings</ProseH3>
     <div class="grid gap-6 grid-cols-3 @container">
@@ -294,6 +383,8 @@ const taskCount = () => {
 
 const source = computed(() => {
   return `
+#!/bin/bash
+  
 #SBATCH --time=${time.value}
 #SBATCH --ntasks=${taskCount()}
 #SBATCH --nodes=${taskCount() / nTasksPerNode.value}
@@ -306,7 +397,7 @@ export ENSEMBLES_IDLE_ONLY=${enableNumio.value ? "False" : "True"}
 export ENSEMBLES_IDLE_ONLY_TIME=${idleOnlyTime.value}
 
 export ENSEMBLES_MPIEXEC_PATH=${mpiexecPath.value}
-export ENSMEBLES_MPIEXEC_NODES=1
+export ENSEMBLES_MPIEXEC_NODES=1
 
 export ENSEMBLES_NUMIO_PATH=${numioPath.value}
 
@@ -344,6 +435,7 @@ export ENSEMBLES_NUMIO_COMPRESS_LEVEL=${compressLevel.value}
 
 export ENSEMBLES_NUMIO_THREAD=${numioThreads.value}
 
+export ENSEMBLES_BACKGROUND_PROCESS_LIST=\'${JSON.stringify(daemonList.value)}\' 
 
 export ENSEMBLES_IPERF_PATH=${iperfPath.value}
 export ENSEMBLES_IPERF_SERVER_IP=${iperfServerAddr.value}
@@ -354,7 +446,7 @@ export ENSEMBLES_WRITE_PATH=${writePath.value}
 export ENSEMBLES_READ_PATH=${readPath.value}
 
 export ENSEMBLES_FIND_PATH=${findPath.value}
-export ENSMEBLES_FIND_SEARCH_PATH=${findSearchPath.value}
+export ENSEMBLES_FIND_SEARCH_PATH=${findSearchPath.value}
 
 ${mpiexecPath.value} python src/main.py
 `;
