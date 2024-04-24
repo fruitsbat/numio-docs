@@ -189,7 +189,7 @@
         <input class="input" type="number" v-model="compressLevel" />.
       </ProseP>
     </div>
-    <ProseH3>Daemon Settings</ProseH3>
+    <ProseH3 id="daemon-settings">Daemon Settings</ProseH3>
     <div class="grid gap-6 grid-cols-3 @container">
       <div
         class="grid grid-cols-2 @2:grid-cols-3 @7xl:grid-cols-4 col-span-2 flex-wrap gap-4"
