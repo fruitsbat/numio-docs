@@ -2,6 +2,10 @@
   <div>
     <slot></slot>
     <ProseH3>mpiexec Settings</ProseH3>
+    <ProseP>
+        The mpiexec binary is at
+        <input class="input" type="text" v-model="mpiexecPath" />
+      </ProseP>
     <ProseP
       >Reserve <input class="input" type="number" v-model="time" /> minutes of
       time.
@@ -34,7 +38,7 @@
       <hr />
       <ProseP>
         The ensembles binary is at
-        <input class="input" type="text" v-model="mpiexecPath" />
+        <input class="input" type="text" v-model="numioPath" />
       </ProseP>
       <hr />
       <ProseP>
